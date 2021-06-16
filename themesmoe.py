@@ -7,6 +7,10 @@ from pydub import AudioSegment
 
 def get_themes(mal_id):
 	response = requests.post("https://themes.moe/api/themes/search", json=[mal_id])
+	
+	if len(response.json()) == 0:
+		return False
+	
 	themes = response.json()[0]["themes"]
 
 	for theme in themes:
@@ -27,3 +31,5 @@ def get_themes(mal_id):
 		response = requests.get(theme_url, allow_redirects=True, headers=headers, stream=True)
 		stream = ResponseStream(response.iter_content(1024*1024))
 		AudioSegment.from_file(stream).export(mp3_path, format="mp3")
+	
+	return True

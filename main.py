@@ -31,7 +31,12 @@ if __name__ == '__main__':
 		kitsu_id = yunamoe.anidb_id_to_kitsu_id(anidb_id)
 
 		kitsu_details = kitsu.details(kitsu_id)
-		themesmoe.get_themes(mal_id)
+		has_themes = themesmoe.get_themes(mal_id)
+
+		if not has_themes:
+			title = kitsu_details["data"]["attributes"]["canonicalTitle"]
+			print(f"{title} has no themes! Skipping")
+			continue
 
 		episodes = twistmoe.get_episodes(kitsu_details["data"]["attributes"]["slug"])
 		fingerprint.fingerprint_episodes(anidb_id, episodes)
