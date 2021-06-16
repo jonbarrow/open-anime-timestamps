@@ -22,9 +22,9 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 | URL                                 | Use                         |
 |------------------------------------ |-----------------------------|
 | https://anidb.net                   | Anime title list            |
-| https://relations.yuna.moe          | AniDB IDs to MAL IDs        |
+| https://relations.yuna.moe          | AniDB IDs to MAL/Kitsu IDs  |
 | https://themes.moe                  | Anime opening/ending themes |
-| https://animixplay.to               | Anime episode links         |
+| https://twist.moe                   | Anime episodes              |
 | https://github.com/worldveil/dejavu | Acoustic fingerprinting     |
 | http://tuckerchap.in/BetterVRV      | Other timestamp DB (unused) |
 
@@ -32,7 +32,7 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 - Implement `close` method in `stream_response.py`. Currently only stubbed to get `AudioSegment` working
 - Fix scrape times. Animixplay can be slow as hell
 - Add opening/ending length times for easier skipping
-- Add more sources for episodes? animepahe and twistmoe might be viable (none have a complete catalog, but together might)
+- ~~Add more sources for episodes? animepahe and twistmoe might be viable (none have a complete catalog, but together might)~~
 - Better comments
 - Parallel downloads?
 - Clean up the code
