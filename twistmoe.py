@@ -22,8 +22,6 @@ def get_episodes(slug):
 	episodes = []
 
 	for episode in encrypted_episodes:
-		if episode["number"] == 4:
-			break
 		video_url = decrypt_source(episode["source"])
 		file_name = video_url.rsplit('/', 1)[1].split('?')[0]
 		mp3_file_name = f"{Path(file_name).stem}.mp3"
