@@ -1,0 +1,20 @@
+{
+	"openings": {
+		"database": {
+			"host": "127.0.0.1",
+			"user": "root",
+			"password": "",
+			"database": "openings"
+		},
+		"database_type": "mysql"
+	},
+	"endings": {
+		"database": {
+			"host": "127.0.0.1",
+			"user": "root",
+			"password": "",
+			"database": "endings"
+		},
+		"database_type": "mysql"
+	}
+}
