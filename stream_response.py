@@ -12,7 +12,6 @@ class ResponseStream(object):
 	def _load_all(self):
 		self._bytes.seek(0, SEEK_END)
 		for chunk in self._iterator:
-			print(len(chunk))
 			self._bytes.write(chunk)
 
 	def _load_until(self, goal_position):
