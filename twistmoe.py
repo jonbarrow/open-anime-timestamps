@@ -3,6 +3,7 @@ import hashlib
 import base64
 import os
 import time
+import asyncio
 from pathlib import Path
 from pydub import AudioSegment
 from Crypto.Cipher import AES
@@ -10,7 +11,7 @@ from Crypto.Util import Padding
 
 AES_KEY = b"267041df55ca2b36f2e322d05ee2c9cf"
 
-def get_episodes(slug):
+async def get_episodes(slug):
 	session = requests.Session()
 	headers = {
 		"referer": "https://twist.moe/",
@@ -21,7 +22,7 @@ def get_episodes(slug):
 	encrypted_episodes = response.json()
 	episodes = []
 
-	for episode in encrypted_episodes:
+	def download(episode):
 		video_url = decrypt_source(episode["source"])
 		file_name = video_url.rsplit('/', 1)[1].split('?')[0]
 		mp3_file_name = f"{Path(file_name).stem}.mp3"
@@ -57,6 +58,18 @@ def get_episodes(slug):
 			"episode_number": episode["number"],
 			"mp3_path": mp3_path
 		})
+
+		return True
+
+	loop = asyncio.get_event_loop()
+	tasks = []
+
+	for episode in encrypted_episodes:
+		tasks.append(loop.run_in_executor(None, download, episode))
+
+	await gather_with_concurrency(2, *tasks)
+
+	print("Out of loop")
 
 	return episodes
 
@@ -110,3 +123,12 @@ def evpKDF(passwd, salt, key_size=8, iv_size=4, iterations=1, hash_algorithm="md
 		"key": derived_bytes[0: key_size * 4],
 		"iv": derived_bytes[key_size * 4:]
 	}
+
+# https://stackoverflow.com/a/61478547
+async def gather_with_concurrency(n, *tasks):
+	semaphore = asyncio.BoundedSemaphore(n)
+
+	async def sem_task(task):
+		async with semaphore:
+			return await task
+	return await asyncio.gather(*(sem_task(task) for task in tasks))

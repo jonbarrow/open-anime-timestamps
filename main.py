@@ -1,6 +1,7 @@
 import os
 import json
 import xmltodict
+import asyncio
 #import bettervrv
 import anidb
 import yunamoe
@@ -10,7 +11,7 @@ import themesmoe
 import twistmoe
 import fingerprint
 
-if __name__ == '__main__':
+async def main():
 	# Create JSON database if not exists
 	if not os.path.exists("timestamps.json"):
 		with open("timestamps.json", "w") as f:
@@ -38,7 +39,7 @@ if __name__ == '__main__':
 			print(f"{title} has no themes! Skipping")
 			continue
 
-		episodes = twistmoe.get_episodes(kitsu_details["data"]["attributes"]["slug"])
+		episodes = await twistmoe.get_episodes(kitsu_details["data"]["attributes"]["slug"])
 		fingerprint.fingerprint_episodes(anidb_id, episodes)
 
 		'''
@@ -57,3 +58,6 @@ if __name__ == '__main__':
 		episodes = animixplay.get_episodes(title)
 		fingerprint.fingerprint_episodes(anidb_id, episodes)
 		'''
+
+if __name__ == '__main__':
+	asyncio.run(main())
