@@ -29,8 +29,9 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 | http://tuckerchap.in/BetterVRV      | Other timestamp DB (unused) |
 
 # TODO
+- Remove `asyncio` from twist.moe requests. This will not make it faster, it's only there so the requests don't have to wait for `AudioSegment`. Maybe it would be better to download the episodes and then batch convert them?
 - Implement `close` method in `stream_response.py`. Currently only stubbed to get `AudioSegment` working
-- Fix scrape times. Animixplay can be slow as hell
+- ~~Fix scrape times. Animixplay can be slow as hell~~
 - Add opening/ending length times for easier skipping
 - ~~Add more sources for episodes? animepahe and twistmoe might be viable (none have a complete catalog, but together might)~~
 - Better comments
