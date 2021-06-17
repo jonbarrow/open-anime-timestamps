@@ -1,5 +1,7 @@
-<img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
-<img alt="Python" src="https://img.shields.io/badge/python 3+-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white"/>
+<p float="left">
+	<img alt="Linux" src="https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
+	<img alt="Python" src="https://img.shields.io/badge/python 3+-%2314354C.svg?style=for-the-badge&logo=python&logoColor=white"/>
+</p>
 
 # Open Anime Timestamps
 ## Open source database and scraper for anime episode opening and ending timestamps
