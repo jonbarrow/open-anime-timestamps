@@ -69,7 +69,6 @@ async def get_episodes(slug):
 
 	await gather_with_concurrency(2, *tasks)
 
-	print("Out of loop")
 
 	return episodes
 
