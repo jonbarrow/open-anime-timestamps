@@ -33,6 +33,7 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 
 # TODO
 - Remove `asyncio` from twist.moe requests. This will not make it faster, it's only there so the requests don't have to wait for `AudioSegment`. Maybe it would be better to download the episodes and then batch convert them?
+- Switch from https://relations.yuna.moe to a local offline database with https://github.com/manami-project/anime-offline-database
 - Implement `close` method in `stream_response.py`. Currently only stubbed to get `AudioSegment` working
 - ~~Fix scrape times. Animixplay can be slow as hell~~
 - Add opening/ending length times for easier skipping
