@@ -2,7 +2,7 @@ import os
 import json
 import xmltodict
 import asyncio
-#import bettervrv
+import bettervrv
 import anime_skip
 import anidb
 import yunamoe
@@ -20,9 +20,6 @@ async def main():
 
 	local_database_file = open("timestamps.json", "r+")
 	local_database = json.load(local_database_file)
-
-	# Download BetterVRV database
-	#bettervrv.download_database() # disabled for now
 
 	# Update the anime titles cache
 	anidb.update_title_cache()
@@ -53,20 +50,23 @@ async def main():
 				continue
 
 			if not any(e['episode_number'] == episode["attributes"]["number"] for e in series):
-				episode_timestamps = anime_skip.find_episode_by_name(episode["attributes"]["canonicalTitle"])
-				if episode_timestamps:
-					# anime-skip has a lot of timestamp types, most of which don't make sense
-					# only taking a subset of them
-					timestamp_data = {
-						"source": "anime_skip",
-						"episode_number": episode["attributes"]["number"],
-						"recap_start": -1,
-						"opening_start": -1,
-						"ending_start": -1,
-						"preview_start": -1
-					}
+				anime_skip_episode_timestamps = anime_skip.find_episode_by_name(episode["attributes"]["canonicalTitle"])
+				bettervrv_episode_timestamps = bettervrv.find_episode_by_name(episode["attributes"]["canonicalTitle"])
+				
+				timestamp_data = {
+					"episode_number": episode["attributes"]["number"],
+					"recap_start": -1,
+					"opening_start": -1,
+					"ending_start": -1,
+					"preview_start": -1
+				}
 
-					for timestamp in episode_timestamps:
+				if anime_skip_episode_timestamps:
+					# anime-skip has a lot of timestamp types, most of which don't make sense to me
+					# only taking a subset of them
+					timestamp_data["source"] = "anime_skip"
+
+					for timestamp in anime_skip_episode_timestamps:
 						if timestamp["type"]["name"] == "Recap":
 							timestamp_data["recap_start"] = int(timestamp["at"])
 						
@@ -79,10 +79,24 @@ async def main():
 						if timestamp["type"]["name"] == "Preview":
 							timestamp_data["preview_start"] = int(timestamp["at"])
 
-					if timestamp_data["recap_start"] == -1 and timestamp_data["opening_start"] == -1 and timestamp_data["ending_start"] == -1 and timestamp_data["preview_start"] == -1:
-						continue
+				elif bettervrv_episode_timestamps:
+					timestamp_data["source"] = "bettervrv"
 
-					series.append(timestamp_data)
+					if "introStart" in bettervrv_episode_timestamps:
+						timestamp_data["opening_start"] = int(bettervrv_episode_timestamps["introStart"])
+
+					if "outroStart" in bettervrv_episode_timestamps:
+						timestamp_data["ending_start"] = int(bettervrv_episode_timestamps["outroStart"])
+
+					if "previewStart" in bettervrv_episode_timestamps:
+						timestamp_data["preview_start"] = int(bettervrv_episode_timestamps["previewStart"])
+
+					# BetterVRV also has a "postSceneEnd" timestamp, not sure what it does though. Not tracked
+
+				if timestamp_data["recap_start"] == -1 and timestamp_data["opening_start"] == -1 and timestamp_data["ending_start"] == -1 and timestamp_data["preview_start"] == -1:
+					continue
+
+				series.append(timestamp_data)
 
 		local_database_file.seek(0)
 		json.dump(local_database, local_database_file, indent=4)
