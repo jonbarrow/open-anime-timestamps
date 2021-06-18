@@ -143,3 +143,4 @@ config.json
 episodes
 openings
 endings
+*.py.swp
