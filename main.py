@@ -5,7 +5,7 @@ import asyncio
 import bettervrv
 import anime_skip
 import anidb
-import yunamoe
+import anime_offline_database
 import kitsu
 import themesmoe
 #import animixplay
@@ -24,13 +24,16 @@ async def main():
 	# Update the anime titles cache
 	anidb.update_title_cache()
 
+	# Update anime ID db
+	anime_offline_database.update_id_database()
+
 	anime_titles_xml = open("anime-titles.xml")
 	anime_titles = xmltodict.parse(anime_titles_xml.read())
 
 	# Pull timestamps from other databases first
 	for anime in anime_titles["animetitles"]["anime"]:
 		anidb_id = anime["@aid"]
-		kitsu_id = yunamoe.anidb_id_to_kitsu_id(anidb_id)
+		kitsu_id = anime_offline_database.convert_anime_id(anidb_id, "anidb", "kitsu")
 		
 		if not kitsu_id:
 			continue
@@ -106,8 +109,8 @@ async def main():
 	# Scrape other timestamps
 	for anime in anime_titles["animetitles"]["anime"]:
 		anidb_id = anime["@aid"]
-		mal_id = yunamoe.anidb_id_to_mal_id(anidb_id)
-		kitsu_id = yunamoe.anidb_id_to_kitsu_id(anidb_id)
+		mal_id = anime_offline_database.convert_anime_id(anidb_id, "anidb", "myanimelist")
+		kitsu_id = anime_offline_database.convert_anime_id(anidb_id, "anidb", "kitsu")
 
 		kitsu_details = kitsu.details(kitsu_id)
 		has_themes = themesmoe.get_themes(mal_id)

@@ -139,6 +139,7 @@ cython_debug/
 
 # Custom
 anime-titles.*
+anime-offline-database*
 config.json
 episodes
 openings
