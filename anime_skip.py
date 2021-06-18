@@ -17,10 +17,8 @@ def find_episode_by_name(name):
 		data = client.execute(query=query, variables={ "name": name })
 	except Exception:
 		# If killed, just wait a second
-		print(name)
 		time.sleep(1)
 		return find_episode_by_name(name)
-	
 	
 	try:
 		return data["data"]["findEpisodeByName"][0]["timestamps"]
