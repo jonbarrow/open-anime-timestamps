@@ -33,7 +33,7 @@ def fingerprint_episodes(anidb_id, episodes):
 	print("Adding endings to fingerprint database")
 	endings_dejavu.fingerprint_directory("endings", [".mp3"])
 
-	local_database_file = open("timestamps.json")
+	local_database_file = open("timestamps.json", "r+")
 	local_database = json.load(local_database_file)
 
 	if anidb_id not in local_database:
@@ -53,10 +53,14 @@ def fingerprint_episodes(anidb_id, episodes):
 			ending_start = int(abs(ending_results["results"][0]["offset_seconds"])) # convert to positive and round down
 
 			series.append({
+				"source": "open_anime_timestamps",
 				"episode_number": episode["episode_number"],
+				"recap_start": -1,
 				"opening_start": opening_start,
 				"ending_start": ending_start,
+				"preview_start": -1
 			})
 	
-	json.dump(local_database, local_database_file)
+	local_database_file.seek(0)
+	json.dump(local_database, local_database_file, indent=4)
 	local_database_file.close()
