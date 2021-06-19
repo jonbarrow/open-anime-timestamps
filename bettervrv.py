@@ -1,6 +1,7 @@
 # Database with a few thousand timestamps already
 
 import json
+import time
 import urllib.parse
 import requests
 
@@ -16,12 +17,17 @@ def find_episode_by_name(name):
 		})
 	})
 
-	response = requests.get(f"{PARSE_SERVER}/classes/Timestamps?{params}", headers={
-		"X-Parse-Application-Id": APP_ID,
-		"X-Parse-JavaScript-Key": JS_ID
-	})
+	try:
+		response = requests.get(f"{PARSE_SERVER}/classes/Timestamps?{params}", headers={
+			"X-Parse-Application-Id": APP_ID,
+			"X-Parse-JavaScript-Key": JS_ID
+		})
+	except Exception:
+		# If killed, just wait a second
+		time.sleep(1)
+		return find_episode_by_name(name)
 
 	try:
 		return response.json()["results"][0]
-	except IndexError:
+	except Exception:
 		return None
