@@ -22,6 +22,6 @@ def find_episode_by_name(name):
 	
 	try:
 		return data["data"]["findEpisodeByName"][0]["timestamps"]
-	except IndexError:
+	except Exception:
 		return None
 	
