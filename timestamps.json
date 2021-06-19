@@ -11,8 +11,26 @@
         }
     ],
     "3": [],
-    "4": [],
-    "5": [],
+    "4": [
+        {
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1348,
+            "preview_start": -1,
+            "source": "bettervrv"
+        }
+    ],
+    "5": [
+        {
+            "episode_number": 4,
+            "recap_start": -1,
+            "opening_start": 109,
+            "ending_start": 1330,
+            "preview_start": -1,
+            "source": "bettervrv"
+        }
+    ],
     "6": [],
     "7": [],
     "8": [],
@@ -119,7 +137,16 @@
     "44": [],
     "45": [],
     "46": [],
-    "47": [],
+    "47": [
+        {
+            "episode_number": 26,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1330,
+            "preview_start": -1,
+            "source": "bettervrv"
+        }
+    ],
     "48": [],
     "49": [],
     "50": [],
@@ -128,7 +155,16 @@
     "53": [],
     "54": [],
     "55": [],
-    "56": [],
+    "56": [
+        {
+            "episode_number": 15,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        }
+    ],
     "58": [],
     "59": [],
     "60": [],
@@ -243,6 +279,142 @@
             "opening_start": -1,
             "ending_start": -1,
             "preview_start": -1
+        },
+        {
+            "episode_number": 148,
+            "recap_start": -1,
+            "opening_start": 19,
+            "ending_start": 1335,
+            "preview_start": 1397,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 9,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1386,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 11,
+            "recap_start": -1,
+            "opening_start": 117,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 14,
+            "recap_start": -1,
+            "opening_start": -1,
+            "ending_start": 1374,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 15,
+            "recap_start": -1,
+            "opening_start": -1,
+            "ending_start": 1372,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 31,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 48,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 96,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 105,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 198,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 228,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1326,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 305,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 326,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 335,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 336,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 446,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1398,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 560,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1399,
+            "preview_start": -1,
+            "source": "bettervrv"
         }
     ],
     "70": [],
@@ -260,11 +432,29 @@
     ],
     "75": [],
     "76": [],
-    "77": [],
+    "77": [
+        {
+            "episode_number": 32,
+            "recap_start": -1,
+            "opening_start": -1,
+            "ending_start": 1342,
+            "preview_start": -1,
+            "source": "bettervrv"
+        }
+    ],
     "78": [],
     "79": [],
     "80": [],
-    "81": [],
+    "81": [
+        {
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 80,
+            "ending_start": 1274,
+            "preview_start": -1,
+            "source": "bettervrv"
+        }
+    ],
     "82": [],
     "83": [],
     "84": [
@@ -301,6 +491,14 @@
             "opening_start": -1,
             "ending_start": -1,
             "preview_start": 1418
+        },
+        {
+            "episode_number": 21,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1348,
+            "preview_start": -1,
+            "source": "bettervrv"
         }
     ],
     "86": [],
@@ -326,6 +524,14 @@
             "opening_start": -1,
             "ending_start": -1,
             "preview_start": 1362
+        },
+        {
+            "episode_number": 64,
+            "recap_start": -1,
+            "opening_start": -1,
+            "ending_start": 1298,
+            "preview_start": -1,
+            "source": "bettervrv"
         }
     ],
     "93": [],
@@ -383,7 +589,24 @@
     "103": [],
     "104": [],
     "105": [],
-    "106": [],
+    "106": [
+        {
+            "episode_number": 8,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 9,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        }
+    ],
     "107": [],
     "108": [],
     "109": [],
@@ -465,6 +688,14 @@
             "opening_start": 123,
             "ending_start": 1331,
             "preview_start": 1421
+        },
+        {
+            "episode_number": 24,
+            "recap_start": -1,
+            "opening_start": 189,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
         }
     ],
     "134": [],
@@ -491,6 +722,14 @@
             "opening_start": -1,
             "ending_start": -1,
             "preview_start": 2845
+        },
+        {
+            "episode_number": 14,
+            "recap_start": -1,
+            "opening_start": -1,
+            "ending_start": 1342,
+            "preview_start": -1,
+            "source": "bettervrv"
         }
     ],
     "143": [],
@@ -502,6 +741,14 @@
             "opening_start": -1,
             "ending_start": -1,
             "preview_start": 1430
+        },
+        {
+            "episode_number": 4,
+            "recap_start": -1,
+            "opening_start": 5,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
         }
     ],
     "145": [],
@@ -523,12 +770,37 @@
             "opening_start": -1,
             "ending_start": -1,
             "preview_start": 1361
+        },
+        {
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1348,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 10,
+            "recap_start": -1,
+            "opening_start": 31,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
         }
     ],
     "160": [],
     "161": [],
     "162": [],
-    "163": [],
+    "163": [
+        {
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1265,
+            "preview_start": 1355,
+            "source": "bettervrv"
+        }
+    ],
     "164": [],
     "165": [],
     "166": [],
@@ -577,6 +849,14 @@
             "opening_start": -1,
             "ending_start": -1,
             "preview_start": 1410
+        },
+        {
+            "episode_number": 13,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1292,
+            "preview_start": -1,
+            "source": "bettervrv"
         }
     ],
     "192": [
@@ -619,7 +899,16 @@
     "213": [],
     "215": [],
     "216": [],
-    "217": [],
+    "217": [
+        {
+            "episode_number": 7,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1348,
+            "preview_start": -1,
+            "source": "bettervrv"
+        }
+    ],
     "218": [],
     "219": [],
     "220": [],
@@ -802,6 +1091,70 @@
             "opening_start": -1,
             "ending_start": -1,
             "preview_start": 1415
+        },
+        {
+            "episode_number": 25,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 26,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 28,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 30,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 31,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 33,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 35,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": -1,
+            "preview_start": -1,
+            "source": "bettervrv"
+        },
+        {
+            "episode_number": 40,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 101,
+            "preview_start": -1,
+            "source": "bettervrv"
         }
     ],
     "240": [
@@ -998,6 +1351,14 @@
             "opening_start": -1,
             "ending_start": -1,
             "preview_start": 1358
+        },
+        {
+            "episode_number": 16,
+            "recap_start": -1,
+            "opening_start": 91,
+            "ending_start": 1316,
+            "preview_start": 1406,
+            "source": "bettervrv"
         }
     ],
     "359": [],
