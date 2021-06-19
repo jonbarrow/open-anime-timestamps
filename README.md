@@ -44,27 +44,27 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 }
 ```
 
-
 # Credits
 ## This projects takes data from multiple sources
-| URL                                 | Use                         |
-|-------------------------------------|-----------------------------|
-| https://anidb.net                   | Anime title list            |
-| https://relations.yuna.moe          | AniDB IDs to MAL/Kitsu IDs  |
-| https://themes.moe                  | Anime opening/ending themes |
-| https://twist.moe                   | Anime episodes              |
-| https://github.com/worldveil/dejavu | Acoustic fingerprinting     |
-| https://www.anime-skip.com          | Other timestamp DB          |
-| http://tuckerchap.in/BetterVRV      | Other timestamp DB (unused) |
+| URL                                                      | Use                         |
+|----------------------------------------------------------|-----------------------------|
+| https://anidb.net                                        | Anime title list            |
+| https://github.com/manami-project/anime-offline-database | AniDB IDs to MAL/Kitsu IDs  |
+| https://themes.moe                                       | Anime opening/ending themes |
+| https://twist.moe                                        | Anime episodes              |
+| https://github.com/worldveil/dejavu                      | Acoustic fingerprinting     |
+| https://www.anime-skip.com                               | Other timestamp DB          |
+| http://tuckerchap.in/BetterVRV                           | Other timestamp DB          |
 
 # TODO
-- Remove `asyncio` from twist.moe requests. This will not make it faster, it's only there so the requests don't have to wait for `AudioSegment`. Maybe it would be better to download the episodes and then batch convert them?
-- Speed this thing up. Right now it takes FOREVER to scrape
-- Switch from https://relations.yuna.moe to a local offline database with https://github.com/manami-project/anime-offline-database
-- Implement `close` method in `stream_response.py`. Currently only stubbed to get `AudioSegment` working
-- ~~Fix scrape times. Animixplay can be slow as hell~~
-- Add opening/ending length times for easier skipping
-- ~~Add more sources for episodes? animepahe and twistmoe might be viable (none have a complete catalog, but together might)~~
-- Better comments
-- Clean up the code
-- Add BetterVRV support?
+- [ ] Logging
+- [ ] Remove `asyncio` from twist.moe requests. This will not make it faster, it's only there so the requests don't have to wait for `AudioSegment`. Maybe it would be better to download the episodes and then batch convert them?
+- [ ] Speed this thing up. Right now it takes FOREVER to scrape
+- [x] Switch from https://relations.yuna.moe to a local offline database with https://github.com/manami-project/anime-offline-database
+- [ ] Implement `close` method in `stream_response.py`. Currently only stubbed to get `AudioSegment` working
+- [x] Fix scrape times. Animixplay can be slow as hell
+- [ ] Add opening/ending length times for easier skipping
+- [x] Add more sources for episodes? animepahe and twistmoe might be viable (none have a complete catalog, but together might)
+- [ ] Better comments
+- [ ] Clean up the code
+- [x] Add BetterVRV support
