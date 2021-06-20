@@ -3,6 +3,7 @@ import json
 import xmltodict
 import asyncio
 import argparse
+from pathlib import Path
 import bettervrv
 import anime_skip
 import anidb
@@ -14,11 +15,15 @@ import twistmoe
 import fingerprint
 
 parser = argparse.ArgumentParser(description="Create a database of anime theme timestamps.")
-parser.add_argument("--skip-aggregation", aliases=["-sa"], dest="skip_aggregation", action="store_true", help="skips the first loop that aggregates timestamps from other databases")
-parser.add_argument("--aggregation-start-id", aliases=["-asi"], dest="aggregation_start", type=int, help="set the start ID for the first, aggregation, loop")
-parser.add_argument("--scrape-start-id", aliases=["-ssi"], dest="scrape_start", type=int, help="set the start ID for the second, scraping, loop")
+parser.add_argument("-sa", "--skip-aggregation", dest="skip_aggregation", action="store_true", help="skips the first loop that aggregates timestamps from other databases")
+parser.add_argument("-asi", "--aggregation-start-id", dest="aggregation_start", type=int, help="set the start ID for the first, aggregation, loop")
+parser.add_argument("-ssi", "--scrape-start-id", dest="scrape_start", type=int, help="set the start ID for the second, scraping, loop")
 
 args = parser.parse_args()
+
+Path("./openings").mkdir(exist_ok=True)
+Path("./endings").mkdir(exist_ok=True)
+Path("./episodes").mkdir(exist_ok=True)
 
 async def main():
 	# Create JSON database if not exists
@@ -123,7 +128,7 @@ async def main():
 	start_index = 0
 	if args.scrape_start != None:
 		start_index = next((i for i, anime in enumerate(anime_titles) if int(anime["@aid"]) == args.scrape_start), 0)
-		
+
 	for anime in anime_titles[start_index:]:
 		anidb_id = anime["@aid"]
 		mal_id = anime_offline_database.convert_anime_id(anidb_id, "anidb", "myanimelist")
