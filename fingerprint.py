@@ -12,6 +12,8 @@ except ImportError:
 ##########################################################
 
 import json
+import glob
+import os
 from dejavu import Dejavu
 from dejavu.logic.recognizer.file_recognizer import FileRecognizer
 
@@ -33,6 +35,13 @@ def fingerprint_episodes(anidb_id, episodes):
 	print("Adding endings to fingerprint database")
 	endings_dejavu.fingerprint_directory("endings", [".mp3"])
 
+	# Clear the ending/opening folders after done
+	for f in glob.glob("./opening/*"):
+		os.remove(f)
+
+	for f in glob.glob("./endings/*"):
+		os.remove(f)
+
 	local_database_file = open("timestamps.json", "r+")
 	local_database = json.load(local_database_file)
 
@@ -51,6 +60,8 @@ def fingerprint_episodes(anidb_id, episodes):
 			print("Checking episode audio for ending")
 			ending_results = endings_recognizer.recognize_file(episodes[0]["mp3_path"])
 			ending_start = int(abs(ending_results["results"][0]["offset_seconds"])) # convert to positive and round down
+
+			os.remove(episodes[0]["mp3_path"])
 
 			series.append({
 				"source": "open_anime_timestamps",
