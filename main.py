@@ -30,6 +30,7 @@ async def main():
 	if not os.path.exists("timestamps.json"):
 		with open("timestamps.json", "w") as f:
 			json.dump({}, f)
+			f.close()
 
 	local_database_file = open("timestamps.json", "r+")
 	local_database = json.load(local_database_file)
