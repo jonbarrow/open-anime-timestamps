@@ -19,6 +19,11 @@ async def get_episodes(slug):
 	}
 
 	response = session.get(f"https://twist.moe/api/anime/{slug}/sources", headers=headers)
+
+	if response.status_code != 200:
+		print(f"No sources found for {slug}")
+		return
+	
 	encrypted_episodes = response.json()
 	episodes = []
 
@@ -33,6 +38,11 @@ async def get_episodes(slug):
 		print(f"Downloading {video_url}")
 		# Twist will kill connections often, downloading carefully
 		video_headers = session.head(video_url, headers=headers)
+
+		if video_headers.status_code != 200:
+			print(f"Episode {video_url} not reachable!")
+			return
+
 		content_length = int(video_headers.headers["content-length"] or 0)
 		video_file = open(video_path, "wb")
 		downloaded_bytes = 0
@@ -59,8 +69,6 @@ async def get_episodes(slug):
 			"mp3_path": mp3_path
 		})
 
-		return True
-
 	loop = asyncio.get_event_loop()
 	tasks = []
 
@@ -68,7 +76,6 @@ async def get_episodes(slug):
 		tasks.append(loop.run_in_executor(None, download, episode))
 
 	await gather_with_concurrency(2, *tasks)
-
 
 	return episodes
 
