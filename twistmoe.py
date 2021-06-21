@@ -22,7 +22,7 @@ async def get_episodes(slug):
 
 	if response.status_code != 200:
 		print(f"No sources found for {slug}")
-		return
+		return []
 	
 	encrypted_episodes = response.json()
 	episodes = []
