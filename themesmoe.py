@@ -1,24 +1,15 @@
 # Download series opening and endings
 
 import requests
-import os
-from pathlib import Path
-from pydub import AudioSegment
 
-def get_themes(mal_id):
-	response = requests.post("https://themes.moe/api/themes/search", json=[mal_id])
-	
-	if len(response.json()) == 0:
-		return False
-	
-	themes = response.json()[0]["themes"]
+def download_themes(mal_id):
+	themes = get_themes(mal_id)
+	themes_list = []
 
 	for theme in themes:
 		theme_type = theme["themeType"]
 		theme_url = theme["mirror"]["mirrorURL"]
 		file_name = theme_url.rsplit('/', 1)[1]
-
-		mp3_file_name = f"{Path(file_name).stem}.mp3"
 		
 		theme_folder = None
 
@@ -26,8 +17,7 @@ def get_themes(mal_id):
 			theme_folder = "./openings"
 		elif "ED" in theme_type:
 			theme_folder = "./endings"
-	
-		mp3_path = f"{theme_folder}/{mp3_file_name}"
+
 		video_path = f"{theme_folder}/{file_name}"
 
 		headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4521.0 Safari/537.36 Edg/93.0.910.5"}
@@ -37,7 +27,17 @@ def get_themes(mal_id):
 		for chunk in response.iter_content(chunk_size=1024*1024): 
 			video_file.write(chunk)
 
-		AudioSegment.from_file(video_path).export(mp3_path, format="mp3")
-		os.remove(video_path)
+		themes_list.append(video_path)
 	
-	return True
+	return themes_list
+
+
+def get_themes(mal_id):
+	response = requests.post("https://themes.moe/api/themes/search", json=[mal_id])
+	
+	if len(response.json()) == 0:
+		return []
+	
+	themes = response.json()[0]["themes"]
+	
+	return themes

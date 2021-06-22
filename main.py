@@ -4,6 +4,7 @@ import xmltodict
 import asyncio
 import argparse
 from pathlib import Path
+from pydub import AudioSegment
 import bettervrv
 import anime_skip
 import anidb
@@ -136,12 +137,17 @@ async def main():
 		kitsu_id = anime_offline_database.convert_anime_id(anidb_id, "anidb", "kitsu")
 
 		kitsu_details = kitsu.details(kitsu_id)
-		has_themes = themesmoe.get_themes(mal_id)
+		themes = themesmoe.download_themes(mal_id)
 
-		if not has_themes:
+		if len(themes) == 0:
 			title = kitsu_details["data"]["attributes"]["canonicalTitle"]
 			print(f"{title} has no themes! Skipping")
 			continue
+
+		for theme_path in themes:
+			mp3_path = Path(theme_path).with_suffix(".mp3")
+			AudioSegment.from_file(theme_path).export(mp3_path, format="mp3")
+			os.remove(theme_path)
 
 		episodes = await twistmoe.get_episodes(kitsu_details["data"]["attributes"]["slug"])
 		fingerprint.fingerprint_episodes(anidb_id, episodes)
