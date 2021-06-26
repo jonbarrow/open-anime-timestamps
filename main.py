@@ -132,12 +132,18 @@ def main():
 		themes = themesmoe.download_themes(mal_id)
 
 		if len(themes) == 0:
-			title = kitsu_details["data"]["attributes"]["canonicalTitle"]
-			print(f"{title} has no themes! Skipping")
+			if args.parsed_args.verbose:
+				title = kitsu_details["data"]["attributes"]["canonicalTitle"]
+				print(f"[main.py] [WARNING] {title} has no themes! Skipping")
+			
 			continue
-
+		
 		for theme_path in themes:
 			mp3_path = Path(theme_path).with_suffix(".mp3")
+
+			if args.parsed_args.verbose:
+				print(f"[main.py] [INFO] Converting {theme_path} to {mp3_path}")
+
 			AudioSegment.from_file(theme_path).export(mp3_path, format="mp3")
 			os.remove(theme_path)
 
@@ -146,8 +152,15 @@ def main():
 		for episode in episodes:
 			video_path = episode["video_path"]
 			mp3_path = Path(video_path).with_suffix(".mp3")
+
+			if args.parsed_args.verbose:
+				print(f"[main.py] [INFO] Converting {video_path} to {mp3_path}")
+
 			AudioSegment.from_file(video_path).export(mp3_path, format="mp3")
 			os.remove(video_path)
+
+		if args.parsed_args.verbose:
+			print("[main.py] [INFO] Starting fingerprinting")
 
 		fingerprint.fingerprint_episodes(anidb_id, episodes)
 

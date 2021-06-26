@@ -5,13 +5,15 @@ import gzip
 import os
 import os.path
 import time
+import args
 
 ANIME_XML_URL = "http://anidb.net/api/anime-titles.xml.gz"
 ANIME_XML_PATH = "./anime-titles.xml"
 
 def update_title_cache():
 	if can_download_titles():
-		print("Updating cached anime-titles.xml")
+		if args.parsed_args.verbose:
+			print("[anidb.py] [INFO] Updating cached anime-titles.xml")
 
 		# 403's without a UA
 		headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4521.0 Safari/537.36 Edg/93.0.910.5"}
@@ -24,7 +26,8 @@ def update_title_cache():
 		xml_file.write(xml.decode())
 		xml_file.close()
 	else:
-		print("Using cached anime-titles.xml")
+		if args.parsed_args.verbose:
+			print("[anidb.py] [INFO] Using cached anime-titles.xml")
 
 def can_download_titles():
 	if os.path.isfile(ANIME_XML_PATH) and os.access(ANIME_XML_PATH, os.R_OK):

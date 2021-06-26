@@ -5,18 +5,25 @@ import json
 import os
 import os.path
 import time
+import args
 
 URL = "https://raw.githubusercontent.com/manami-project/anime-offline-database/master/anime-offline-database.json"
 PATH = "./anime-offline-database-processed.json"
 
 def update_id_database():
 	if can_download_database():
-		print("Updating cached anime-offline-database-processed.json")
+		if args.parsed_args.verbose:
+			print("[anime_offline_database.py] [INFO] Updating cached anime-offline-database-processed.json")
 
 		response = requests.get(URL)
 		data = response.json()["data"]
 
 		id_database = []
+
+
+		if args.parsed_args.verbose:
+			print("[anime_offline_database.py] [INFO] Creating anime ID relations")
+
 		for anime in data:
 			relation = {
 				"anilist": None,
@@ -41,16 +48,23 @@ def update_id_database():
 					relation["kitsu"] = int(anime_id)
 
 			if all(value == None for value in relation.values()):
+
+				if args.parsed_args.verbose:
+					print(f"[anime_offline_database.py] [WARNING] No relations found for {anime['title']}")
 				continue
 
 			id_database.append(relation)
 
+		if args.parsed_args.verbose:
+			print("[anime_offline_database.py] [INFO] Saving processed relations")
+		
 		local_database_file = open(PATH, "w")
 		local_database_file.seek(0)
 		json.dump(id_database, local_database_file, indent=4)
 		local_database_file.close()
 	else:
-		print("Using cached anime-offline-database-processed.json")
+		if args.parsed_args.verbose:
+			print("[anime_offline_database.py] [INFO] Using cached anime-offline-database-processed.json")
 
 def can_download_database():
 	if os.path.isfile(PATH) and os.access(PATH, os.R_OK):

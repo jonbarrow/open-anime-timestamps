@@ -1,5 +1,6 @@
 # Only really used to get slugs for twist.moe
 
+import args
 import requests
 
 def details(id):
@@ -12,6 +13,8 @@ def episodes(id, offset=0):
 	episodes_list = [*data["data"]]
 
 	if "next" in data["links"]:
+		if args.parsed_args.verbose:
+			print("[kitsu.py] [INFO] Series has more episodes, getting next page")
 		episodes_list = [*episodes_list, *episodes(id, offset+len(data["data"]))]
 
 	return episodes_list

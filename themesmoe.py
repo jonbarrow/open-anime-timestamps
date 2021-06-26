@@ -1,6 +1,8 @@
 # Download series opening and endings
 
+import args
 import requests
+from tqdm import tqdm
 
 def download_themes(mal_id):
 	themes = get_themes(mal_id)
@@ -24,9 +26,23 @@ def download_themes(mal_id):
 		response = requests.get(theme_url, allow_redirects=True, headers=headers, stream=True)
 
 		video_file = open(video_path, "wb")
-		for chunk in response.iter_content(chunk_size=1024*1024): 
+
+		if args.parsed_args.verbose:
+			content_length = int(response.headers["content-length"] or 0)
+			progress_bar = tqdm(total=content_length, unit='iB', unit_scale=True)
+			progress_bar.set_description(f"[themesmoe.py] [INFO] Downloading {file_name}")
+		
+
+		for chunk in response.iter_content(chunk_size=1024*1024):
+			if args.parsed_args.verbose:
+				progress_bar.update(len(chunk))
+
 			video_file.write(chunk)
 
+		if args.parsed_args.verbose:
+			progress_bar.close()
+
+		video_file.close()
 		themes_list.append(video_path)
 	
 	return themes_list
@@ -37,7 +53,11 @@ def get_themes(mal_id):
 	
 	if len(response.json()) == 0:
 		return []
+
+	data = themes = response.json()[0]
+	themes = data["themes"]
 	
-	themes = response.json()[0]["themes"]
+	if args.parsed_args.verbose:
+		print(f"[themesmoe.py] [INFO] Found {len(themes)} themes for {data['name']}")
 	
 	return themes

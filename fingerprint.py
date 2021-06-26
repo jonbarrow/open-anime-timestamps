@@ -14,6 +14,7 @@ except ImportError:
 import json
 import glob
 import os
+import args
 from dejavu import Dejavu
 from dejavu.logic.recognizer.file_recognizer import FileRecognizer
 
@@ -29,16 +30,24 @@ endings_dejavu = Dejavu(endings_database_cfg)
 endings_recognizer = FileRecognizer(endings_dejavu)
 
 def fingerprint_episodes(anidb_id, episodes):
-	print("Adding openings to fingerprint database")
+	if args.parsed_args.verbose:
+		print("[fingerprint.py] [INFO] Adding openings to fingerprint database")
+
 	openings_dejavu.fingerprint_directory("openings", [".mp3"])
 
-	print("Adding endings to fingerprint database")
+	if args.parsed_args.verbose:
+		print("[fingerprint.py] [INFO] Adding endings to fingerprint database")
+
 	endings_dejavu.fingerprint_directory("endings", [".mp3"])
 
 	# Clear the ending/opening folders after done
+	if args.parsed_args.verbose:
+		print("[fingerprint.py] [INFO] Clearing openings folder")
 	for f in glob.glob("./opening/*"):
 		os.remove(f)
 
+	if args.parsed_args.verbose:
+		print("[fingerprint.py] [INFO] Clearing endings folder")
 	for f in glob.glob("./endings/*"):
 		os.remove(f)
 
@@ -53,15 +62,22 @@ def fingerprint_episodes(anidb_id, episodes):
 	for episode in episodes:
 		if not any(e['episode_number'] == episode["episode_number"] for e in series):
 			# TODO: Handle if the timestamp isn't found
-			print("Checking episode audio for opening")
+			if args.parsed_args.verbose:
+				print("[fingerprint.py] [INFO] Checking episode audio for opening")
+			
 			opening_results = openings_recognizer.recognize_file(episodes[0]["mp3_path"])
 			opening_start = int(abs(opening_results["results"][0]["offset_seconds"])) # convert to positive and round down
 			
-			print("Checking episode audio for ending")
+			if args.parsed_args.verbose:
+				print("[fingerprint.py] [INFO] Checking episode audio for ending")
+			
 			ending_results = endings_recognizer.recognize_file(episodes[0]["mp3_path"])
 			ending_start = int(abs(ending_results["results"][0]["offset_seconds"])) # convert to positive and round down
 
 			os.remove(episodes[0]["mp3_path"])
+
+			if args.parsed_args.verbose:
+				print(f"[fingerprint.py] [INFO] Opening start: {opening_start}. Ending start: {ending_start}")
 
 			series.append({
 				"source": "open_anime_timestamps",

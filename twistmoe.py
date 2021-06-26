@@ -2,6 +2,8 @@ import requests
 import hashlib
 import base64
 import time
+import args
+from tqdm import tqdm
 from pathlib import Path
 from Crypto.Cipher import AES
 from Crypto.Util import Padding
@@ -17,8 +19,6 @@ def download_episodes(slug):
 		file_name = Path(source).name
 		video_path = f"./episodes/{file_name}"
 
-		print(f"Downloading {source}")
-
 		headers = {
 			"referer": "https://twist.moe/",
 			"x-access-token": "0df14814b9e590a1f26d3071a4ed7974"
@@ -26,26 +26,41 @@ def download_episodes(slug):
 		video_headers = requests.head(source, headers=headers)
 
 		if video_headers.status_code != 200:
-			print(f"Episode {source} not reachable! (status code {video_headers.status_code})")
+			if args.parsed_args.verbose:
+				print(f"[twistmoe.py] [WARNING] Episode {source} not reachable! (status code {video_headers.status_code})")
 			continue
 		
 		content_length = int(video_headers.headers["content-length"] or 0)
 		video_file = open(video_path, "wb")
 		downloaded_bytes = 0
 
+		if args.parsed_args.verbose:
+			progress_bar = tqdm(total=content_length, unit='iB', unit_scale=True)
+			progress_bar.set_description(f"[twistmoe.py] [INFO] Downloading {file_name}")
+
 		while downloaded_bytes < content_length:
 			try:
 				response = requests.get(source, timeout=5, stream=True, headers={"Range": "bytes=%d-" % downloaded_bytes, **headers})
-				for chunks in response.iter_content(chunk_size=1024*1024):
-					chunk_len = len(chunks)
+				for chunk in response.iter_content(chunk_size=1024*1024):
+					chunk_len = len(chunk)
 					downloaded_bytes += chunk_len
-					video_file.write(chunks)
+					
+					if args.parsed_args.verbose:
+						progress_bar.update(chunk_len)
+
+					video_file.write(chunk)
+
 					# debug
 					#percent = int(downloaded_bytes * 100. // content_length)
 					#print(f"Downloaded {downloaded_bytes}/{content_length} ({percent}%)")
 			except requests.RequestException:
 				# If killed, just wait a second
+				if args.parsed_args.verbose:
+					print(f"[twistmoe.py] [WARNING] Error while downloading episode. Continuing in one second")
 				time.sleep(1)
+
+		if args.parsed_args.verbose:
+			progress_bar.close()
 
 		video_file.close()
 		
@@ -64,7 +79,8 @@ def get_episodes(slug):
 	response = requests.get(f"https://twist.moe/api/anime/{slug}/sources", headers=headers)
 
 	if response.status_code != 200:
-		print(f"No sources found for {slug}")
+		if args.parsed_args.verbose:
+			print(f"[twistmoe.py] [WARNING] No sources found for {slug}")
 		return []
 	
 	encrypted_episodes = response.json()
