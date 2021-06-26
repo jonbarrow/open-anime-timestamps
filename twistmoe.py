@@ -1,55 +1,42 @@
 import requests
 import hashlib
 import base64
-import os
 import time
-import asyncio
 from pathlib import Path
-from pydub import AudioSegment
 from Crypto.Cipher import AES
 from Crypto.Util import Padding
 
 AES_KEY = b"267041df55ca2b36f2e322d05ee2c9cf"
 
-async def get_episodes(slug):
-	session = requests.Session()
-	headers = {
-		"referer": "https://twist.moe/",
-		"x-access-token": "0df14814b9e590a1f26d3071a4ed7974"
-	}
+def download_episodes(slug):
+	episodes = get_episodes(slug)
+	episodes_list = []
 
-	response = session.get(f"https://twist.moe/api/anime/{slug}/sources", headers=headers)
-
-	if response.status_code != 200:
-		print(f"No sources found for {slug}")
-		return []
-	
-	encrypted_episodes = response.json()
-	episodes = []
-
-	def download(episode):
-		video_url = decrypt_source(episode["source"])
-		file_name = video_url.rsplit('/', 1)[1].split('?')[0]
-		mp3_file_name = f"{Path(file_name).stem}.mp3"
-
+	for episode in episodes:
+		source = episode["source"]
+		file_name = Path(source).name
 		video_path = f"./episodes/{file_name}"
-		mp3_path = f"./episodes/{mp3_file_name}"
 
-		print(f"Downloading {video_url}")
-		# Twist will kill connections often, downloading carefully
-		video_headers = session.head(video_url, headers=headers)
+		print(f"Downloading {source}")
+
+		headers = {
+			"referer": "https://twist.moe/",
+			"x-access-token": "0df14814b9e590a1f26d3071a4ed7974"
+		}
+		video_headers = requests.head(source, headers=headers)
 
 		if video_headers.status_code != 200:
-			print(f"Episode {video_url} not reachable!")
-			return
-
+			print(f"Episode {source} not reachable! (status code {video_headers.status_code})")
+			continue
+		
 		content_length = int(video_headers.headers["content-length"] or 0)
 		video_file = open(video_path, "wb")
 		downloaded_bytes = 0
 
 		while downloaded_bytes < content_length:
 			try:
-				for chunks in session.get(video_url, timeout=5, stream=True, headers={"Range": "bytes=%d-" % downloaded_bytes, **headers}).iter_content(chunk_size=1024*1024):
+				response = requests.get(source, timeout=5, stream=True, headers={"Range": "bytes=%d-" % downloaded_bytes, **headers})
+				for chunks in response.iter_content(chunk_size=1024*1024):
 					chunk_len = len(chunks)
 					downloaded_bytes += chunk_len
 					video_file.write(chunks)
@@ -61,21 +48,33 @@ async def get_episodes(slug):
 				time.sleep(1)
 
 		video_file.close()
-		AudioSegment.from_file(video_path).export(mp3_path, format="mp3")
-		os.remove(video_path)
-
-		episodes.append({
+		
+		episodes_list.append({
 			"episode_number": episode["number"],
-			"mp3_path": mp3_path
+			"video_path": video_path
 		})
 
-	loop = asyncio.get_event_loop()
-	tasks = []
+	return episodes_list
+
+def get_episodes(slug):
+	headers = {
+		"referer": "https://twist.moe/",
+		"x-access-token": "0df14814b9e590a1f26d3071a4ed7974"
+	}
+	response = requests.get(f"https://twist.moe/api/anime/{slug}/sources", headers=headers)
+
+	if response.status_code != 200:
+		print(f"No sources found for {slug}")
+		return []
+	
+	encrypted_episodes = response.json()
+	episodes = []
 
 	for episode in encrypted_episodes:
-		tasks.append(loop.run_in_executor(None, download, episode))
-
-	await gather_with_concurrency(2, *tasks)
+		episodes.append({
+			"source": decrypt_source(episode["source"]),
+			"number": episode["number"]
+		})
 
 	return episodes
 
@@ -129,12 +128,3 @@ def evpKDF(passwd, salt, key_size=8, iv_size=4, iterations=1, hash_algorithm="md
 		"key": derived_bytes[0: key_size * 4],
 		"iv": derived_bytes[key_size * 4:]
 	}
-
-# https://stackoverflow.com/a/61478547
-async def gather_with_concurrency(n, *tasks):
-	semaphore = asyncio.BoundedSemaphore(n)
-
-	async def sem_task(task):
-		async with semaphore:
-			return await task
-	return await asyncio.gather(*(sem_task(task) for task in tasks))

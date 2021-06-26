@@ -149,7 +149,14 @@ async def main():
 			AudioSegment.from_file(theme_path).export(mp3_path, format="mp3")
 			os.remove(theme_path)
 
-		episodes = await twistmoe.get_episodes(kitsu_details["data"]["attributes"]["slug"])
+		episodes = twistmoe.download_episodes(kitsu_details["data"]["attributes"]["slug"])
+
+		for episode in episodes:
+			video_path = episode["video_path"]
+			mp3_path = Path(video_path).with_suffix(".mp3")
+			AudioSegment.from_file(video_path).export(mp3_path, format="mp3")
+			os.remove(video_path)
+
 		fingerprint.fingerprint_episodes(anidb_id, episodes)
 
 		'''
