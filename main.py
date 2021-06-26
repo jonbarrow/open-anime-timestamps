@@ -153,6 +153,8 @@ def main():
 			video_path = episode["video_path"]
 			mp3_path = Path(video_path).with_suffix(".mp3")
 
+			episode["mp3_path"] = mp3_path
+
 			if args.parsed_args.verbose:
 				print(f"[main.py] [INFO] Converting {video_path} to {mp3_path}")
 
@@ -161,6 +163,8 @@ def main():
 
 		if args.parsed_args.verbose:
 			print("[main.py] [INFO] Starting fingerprinting")
+
+		print(episodes)
 
 		fingerprint.fingerprint_episodes(anidb_id, episodes)
 
