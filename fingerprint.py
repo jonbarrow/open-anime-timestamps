@@ -65,16 +65,16 @@ def fingerprint_episodes(anidb_id, episodes):
 			if args.parsed_args.verbose:
 				print("[fingerprint.py] [INFO] Checking episode audio for opening")
 			
-			opening_results = openings_recognizer.recognize_file(episodes[0]["mp3_path"])
+			opening_results = openings_recognizer.recognize_file(episode["mp3_path"])
 			opening_start = int(abs(opening_results["results"][0]["offset_seconds"])) # convert to positive and round down
 			
 			if args.parsed_args.verbose:
 				print("[fingerprint.py] [INFO] Checking episode audio for ending")
 			
-			ending_results = endings_recognizer.recognize_file(episodes[0]["mp3_path"])
+			ending_results = endings_recognizer.recognize_file(episode["mp3_path"])
 			ending_start = int(abs(ending_results["results"][0]["offset_seconds"])) # convert to positive and round down
 
-			os.remove(episodes[0]["mp3_path"])
+			os.remove(episode["mp3_path"])
 
 			if args.parsed_args.verbose:
 				print(f"[fingerprint.py] [INFO] Opening start: {opening_start}. Ending start: {ending_start}")
