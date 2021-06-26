@@ -2,9 +2,9 @@ import os
 import json
 import xmltodict
 import asyncio
-import argparse
 from pathlib import Path
 from pydub import AudioSegment
+import args
 import bettervrv
 import anime_skip
 import anidb
@@ -14,13 +14,6 @@ import themesmoe
 #import animixplay
 import twistmoe
 import fingerprint
-
-parser = argparse.ArgumentParser(description="Create a database of anime theme timestamps.")
-parser.add_argument("-sa", "--skip-aggregation", dest="skip_aggregation", action="store_true", help="skips the first loop that aggregates timestamps from other databases")
-parser.add_argument("-asi", "--aggregation-start-id", dest="aggregation_start", type=int, help="set the start ID for the first, aggregation, loop")
-parser.add_argument("-ssi", "--scrape-start-id", dest="scrape_start", type=int, help="set the start ID for the second, scraping, loop")
-
-args = parser.parse_args()
 
 Path("./openings").mkdir(exist_ok=True)
 Path("./endings").mkdir(exist_ok=True)
@@ -46,10 +39,10 @@ async def main():
 	anime_titles = xmltodict.parse(anime_titles_xml.read())["animetitles"]["anime"]
 
 	# Pull timestamps from other databases first
-	if not args.skip_aggregation:
+	if not args.parsed_args.skip_aggregation:
 		start_index = 0
-		if args.aggregation_start != None:
-			start_index = next((i for i, anime in enumerate(anime_titles) if int(anime["@aid"]) == args.aggregation_start), 0)
+		if args.parsed_args.aggregation_start != None:
+			start_index = next((i for i, anime in enumerate(anime_titles) if int(anime["@aid"]) == args.parsed_args.aggregation_start), 0)
 		
 		for anime in anime_titles[start_index:]:
 			anidb_id = anime["@aid"]
@@ -128,8 +121,8 @@ async def main():
 
 	# Scrape other timestamps
 	start_index = 0
-	if args.scrape_start != None:
-		start_index = next((i for i, anime in enumerate(anime_titles) if int(anime["@aid"]) == args.scrape_start), 0)
+	if args.parsed_args.scrape_start != None:
+		start_index = next((i for i, anime in enumerate(anime_titles) if int(anime["@aid"]) == args.parsed_args.scrape_start), 0)
 
 	for anime in anime_titles[start_index:]:
 		anidb_id = anime["@aid"]
