@@ -2,6 +2,7 @@ import requests
 import hashlib
 import base64
 import time
+import os
 import args
 from tqdm import tqdm
 from pathlib import Path
@@ -9,6 +10,7 @@ from Crypto.Cipher import AES
 from Crypto.Util import Padding
 
 AES_KEY = b"267041df55ca2b36f2e322d05ee2c9cf"
+MAX_RETRY_COUNT = 10
 
 def download_episodes(slug):
 	episodes = get_episodes(slug)
@@ -33,6 +35,7 @@ def download_episodes(slug):
 		content_length = int(video_headers.headers["content-length"] or 0)
 		video_file = open(video_path, "wb")
 		downloaded_bytes = 0
+		retries = 0
 
 		if args.parsed_args.verbose:
 			progress_bar = tqdm(total=content_length, unit='iB', unit_scale=True)
@@ -54,15 +57,28 @@ def download_episodes(slug):
 					#percent = int(downloaded_bytes * 100. // content_length)
 					#print(f"Downloaded {downloaded_bytes}/{content_length} ({percent}%)")
 			except requests.RequestException:
-				# If killed, just wait a second
+				# If killed, just wait a second or skip
+				retries += 1
+
+				if retries >= MAX_RETRY_COUNT:
+					if args.parsed_args.verbose:
+						print(f"[twistmoe.py] [WARNING] Max retries hit. Skipping episode")
+						progress_bar.close()
+					break
+
 				if args.parsed_args.verbose:
-					print(f"[twistmoe.py] [WARNING] Error while downloading episode. Continuing in one second")
+					print(f"[twistmoe.py] [WARNING] Error while downloading episode. Continuing in one second ({retries}/{MAX_RETRY_COUNT} retries)")
+				
 				time.sleep(1)
 
 		if args.parsed_args.verbose:
 			progress_bar.close()
 
 		video_file.close()
+
+		if retries >= MAX_RETRY_COUNT:
+			os.remove(video_path)
+			continue
 		
 		episodes_list.append({
 			"episode_number": episode["number"],
