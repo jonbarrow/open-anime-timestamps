@@ -1,7 +1,6 @@
 import os
 import json
 import xmltodict
-import asyncio
 from pathlib import Path
 from pydub import AudioSegment
 import args
@@ -19,7 +18,7 @@ Path("./openings").mkdir(exist_ok=True)
 Path("./endings").mkdir(exist_ok=True)
 Path("./episodes").mkdir(exist_ok=True)
 
-async def main():
+def main():
 	# Create JSON database if not exists
 	if not os.path.exists("timestamps.json"):
 		with open("timestamps.json", "w") as f:
@@ -170,4 +169,4 @@ async def main():
 		'''
 
 if __name__ == '__main__':
-	asyncio.run(main())
+	main()
