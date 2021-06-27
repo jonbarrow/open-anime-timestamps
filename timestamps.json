@@ -1,5 +1,102 @@
 {
-    "1": [],
+    "1": [
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 155,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 2,
+            "recap_start": -1,
+            "opening_start": 50,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 3,
+            "recap_start": -1,
+            "opening_start": 62,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 4,
+            "recap_start": -1,
+            "opening_start": 88,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 5,
+            "recap_start": -1,
+            "opening_start": 73,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 6,
+            "recap_start": -1,
+            "opening_start": 111,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 7,
+            "recap_start": -1,
+            "opening_start": 65,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 8,
+            "recap_start": -1,
+            "opening_start": 62,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 9,
+            "recap_start": -1,
+            "opening_start": 78,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 10,
+            "recap_start": -1,
+            "opening_start": 161,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 11,
+            "recap_start": -1,
+            "opening_start": 99,
+            "ending_start": 1507,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 13,
+            "recap_start": -1,
+            "opening_start": 2056,
+            "ending_start": 2313,
+            "preview_start": -1
+        }
+    ],
     "2": [
         {
             "source": "anime_skip",
@@ -19,6 +116,78 @@
             "ending_start": 1348,
             "preview_start": -1,
             "source": "bettervrv"
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 2,
+            "recap_start": -1,
+            "opening_start": 242,
+            "ending_start": 1493,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 4,
+            "recap_start": -1,
+            "opening_start": 128,
+            "ending_start": 1493,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 5,
+            "recap_start": -1,
+            "opening_start": 243,
+            "ending_start": 1492,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 6,
+            "recap_start": -1,
+            "opening_start": 120,
+            "ending_start": 1493,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 8,
+            "recap_start": -1,
+            "opening_start": 67,
+            "ending_start": 1493,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 10,
+            "recap_start": -1,
+            "opening_start": 207,
+            "ending_start": 1488,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 11,
+            "recap_start": -1,
+            "opening_start": 125,
+            "ending_start": 1492,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 12,
+            "recap_start": -1,
+            "opening_start": 156,
+            "ending_start": 1493,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 13,
+            "recap_start": -1,
+            "opening_start": 1326,
+            "ending_start": 1427,
+            "preview_start": -1
         }
     ],
     "5": [
@@ -29,6 +198,62 @@
             "ending_start": 1330,
             "preview_start": -1,
             "source": "bettervrv"
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 321,
+            "ending_start": 1381,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 5,
+            "recap_start": -1,
+            "opening_start": 155,
+            "ending_start": 1498,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 6,
+            "recap_start": -1,
+            "opening_start": 278,
+            "ending_start": 1440,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 7,
+            "recap_start": -1,
+            "opening_start": 146,
+            "ending_start": 1479,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 8,
+            "recap_start": -1,
+            "opening_start": 32,
+            "ending_start": 1500,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 9,
+            "recap_start": -1,
+            "opening_start": 235,
+            "ending_start": 1443,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 10,
+            "recap_start": -1,
+            "opening_start": 1117,
+            "ending_start": 970,
+            "preview_start": -1
         }
     ],
     "6": [],
@@ -37,12 +262,769 @@
     "9": [],
     "10": [],
     "11": [],
-    "12": [],
-    "13": [],
-    "14": [],
+    "12": [
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 102,
+            "ending_start": 1463,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 2,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1464,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 3,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1464,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 4,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1464,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 6,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1465,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 7,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1464,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 8,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1464,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 9,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 12,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1459,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 13,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1459,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 14,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 15,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 16,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1459,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 17,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 18,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1459,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 19,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1458,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 20,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 21,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        }
+    ],
+    "13": [
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1477,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 2,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 3,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 4,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 5,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 6,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 7,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 8,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 9,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 11,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 12,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 13,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 14,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1461,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 15,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1461,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 16,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 17,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1461,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 18,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1461,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 20,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1461,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 21,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1461,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 22,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1460,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 23,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1461,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 26,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1477,
+            "preview_start": -1
+        }
+    ],
+    "14": [
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 889,
+            "ending_start": 1404,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 2,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 3,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 4,
+            "recap_start": -1,
+            "opening_start": 1,
+            "ending_start": 1426,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 5,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 7,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 8,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 10,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 11,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 12,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 14,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 15,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 16,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 17,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 18,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 19,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 20,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 22,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 23,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 24,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 25,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1425,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 26,
+            "recap_start": -1,
+            "opening_start": 767,
+            "ending_start": 969,
+            "preview_start": -1
+        }
+    ],
     "15": [],
-    "16": [],
-    "17": [],
+    "16": [
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 129,
+            "ending_start": 1348,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 4,
+            "recap_start": -1,
+            "opening_start": 39,
+            "ending_start": 1346,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 5,
+            "recap_start": -1,
+            "opening_start": 86,
+            "ending_start": 1373,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 6,
+            "recap_start": -1,
+            "opening_start": 57,
+            "ending_start": 1347,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 7,
+            "recap_start": -1,
+            "opening_start": 40,
+            "ending_start": 1348,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 8,
+            "recap_start": -1,
+            "opening_start": 50,
+            "ending_start": 1347,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 9,
+            "recap_start": -1,
+            "opening_start": 35,
+            "ending_start": 1346,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 10,
+            "recap_start": -1,
+            "opening_start": 65,
+            "ending_start": 1346,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 11,
+            "recap_start": -1,
+            "opening_start": 91,
+            "ending_start": 1346,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 12,
+            "recap_start": -1,
+            "opening_start": 91,
+            "ending_start": 1244,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 13,
+            "recap_start": -1,
+            "opening_start": 102,
+            "ending_start": 1276,
+            "preview_start": -1
+        }
+    ],
+    "17": [
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 1,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 2,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 3,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 4,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 5,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 6,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 7,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 9,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 10,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 11,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 12,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 14,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 15,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1362,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 16,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1364,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 17,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 18,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 19,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 21,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 22,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 23,
+            "recap_start": -1,
+            "opening_start": 0,
+            "ending_start": 1365,
+            "preview_start": -1
+        },
+        {
+            "source": "open_anime_timestamps",
+            "episode_number": 24,
+            "recap_start": -1,
+            "opening_start": 1384,
+            "ending_start": 1391,
+            "preview_start": -1
+        }
+    ],
     "18": [],
     "19": [],
     "20": [],
