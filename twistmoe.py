@@ -10,7 +10,7 @@ from Crypto.Cipher import AES
 from Crypto.Util import Padding
 
 AES_KEY = b"267041df55ca2b36f2e322d05ee2c9cf"
-MAX_RETRY_COUNT = 10
+MAX_RETRY_COUNT = args.parsed_args.scrape_max_retry or 10
 
 def download_episodes(slug):
 	episodes = get_episodes(slug)
