@@ -13,6 +13,20 @@
 # What is this?
 Open Anime Timestamps is an open source tool for building a database of opening and ending theme timestamps for anime episodes. Feel free to open a PR with an updated `timestamps.json`. Simply run `python3 main.py` to start
 
+# Usage
+```bash
+$ python3 main.py [arguments]
+```
+
+# Arguments
+| Name                          | Alias        | Description                                                          |
+|-------------------------------|--------------|----------------------------------------------------------------------|
+|`--help`                       | `-h`         | Show the help dialog                                                 |
+|`--verbose`                    | `-v`         | Enable verbose logging                                               |
+|`--skip-aggregation`           | `-sa`        | Skips the first loop that aggregates timestamps from other databases |
+|`--aggregation-start-id VALUE` | `-asi VALUE` | Set the start ID for the first, aggregation, loop                    |
+|`--scrape-start-id VALUE`      | `-ssi VALUE` | Set the start ID for the second, scraping, loop                      |
+
 # How does it work?
 Acoustic fingerprinting and aggregating data from other databases. A database of fingerprints made from the opening and ending themes is used on individual episodes to determine where in each video file the opening/ending fingerprint appears. The data for the opening and endings, and episodes, is scraped from the sources below. Some data comes from existing databases, which we then build off here to try and create a "complete" database
 
@@ -20,7 +34,7 @@ Acoustic fingerprinting and aggregating data from other databases. A database of
 The fingerprinting library used here is Dejavu. This process takes a good amount of RAM to run. Open Anime Timestamps was only tested on Ubuntu 20.04 running Python 3.8. When installing Dejavu, follow the installation instructions making sure to `pip install` the latest *GitHub version* (https://github.com/worldveil/dejavu/zipball/master) (`pip install PyDejavu` seems to install the Python 2 version)
 
 # Database format
-The "database" right now is just a plain json file. Each key is the AniDB ID for the series. Each value is an array of objects containing the source of the timestamp, episode number, opening start, ending start, beginning recap start, and ending "next episode" preview start (in seconds). Not each episode will have every timestamp, `-1` in a value means not found/missing timestamp
+The "database" right now is just a plain json file. Each key is the AniDB ID for the series. Using MAL, Kitsu, or Anilist for IDs? Use an API like https://relations.yuna.moe/ to convert these IDs to AniDB IDs. Each value is an array of objects containing the source of the timestamp, episode number, opening start, ending start, beginning recap start, and ending "next episode" preview start (in seconds). Not each episode will have every timestamp, `-1` in a value means not found/missing timestamp
 ```json
 {
 	"1": [
@@ -54,7 +68,7 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 
 # Credits
 ## This projects takes data from multiple sources
-| URL                                                      | Use                         |
+**| URL                                                      | Use                         |
 |----------------------------------------------------------|-----------------------------|
 | https://wiki.anidb.net/API#Anime_Titles                  | Anime title list            |
 | https://github.com/manami-project/anime-offline-database | AniDB IDs to MAL/Kitsu IDs  |
@@ -62,7 +76,7 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 | https://twist.moe                                        | Anime episodes              |
 | https://github.com/worldveil/dejavu                      | Acoustic fingerprinting     |
 | https://www.anime-skip.com                               | Other timestamp DB          |
-| https://tuckerchap.in/BetterVRV                          | Other timestamp DB          |
+| https://tuckerchap.in/BetterVRV                          | Other timestamp DB          |**
 
 # TODO
 - [ ] Logging
