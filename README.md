@@ -26,6 +26,7 @@ $ python3 main.py [arguments]
 |`--skip-aggregation`           | `-sa`        | Skips the first loop that aggregates timestamps from other databases |
 |`--aggregation-start-id VALUE` | `-asi VALUE` | Set the start ID for the first, aggregation, loop                    |
 |`--scrape-start-id VALUE`      | `-ssi VALUE` | Set the start ID for the second, scraping, loop                      |
+|`--scrape-max-retry VALUE`     | `-smr VALUE` | Change the max retry count for episode scraping. Default 10          |
 
 # How does it work?
 Acoustic fingerprinting and aggregating data from other databases. A database of fingerprints made from the opening and ending themes is used on individual episodes to determine where in each video file the opening/ending fingerprint appears. The data for the opening and endings, and episodes, is scraped from the sources below. Some data comes from existing databases, which we then build off here to try and create a "complete" database

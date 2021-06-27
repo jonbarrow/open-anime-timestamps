@@ -24,7 +24,12 @@ def download_themes(mal_id):
 
 		headers = {"User-Agent": "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/93.0.4521.0 Safari/537.36 Edg/93.0.910.5"}
 		response = requests.get(theme_url, allow_redirects=True, headers=headers, stream=True)
-
+		
+		if response.status_code != 200:
+			if args.parsed_args.verbose:
+				print(f"[themesmoe.py] [WARNING] Theme {file_name} not reachable! (status code {response.status_code})")
+			continue
+		
 		video_file = open(video_path, "wb")
 
 		if args.parsed_args.verbose:
