@@ -39,6 +39,14 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 			"opening_start": 30,
 			"ending_start": 1300,
 			"preview_start": -1
+		},
+		{
+			"source": "bettervrv",
+			"episode_number": 99,
+			"recap_start": -1,
+			"opening_start": 105,
+			"ending_start": 1300,
+			"preview_start": 2000
 		}
 	]
 }
