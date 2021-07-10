@@ -69,7 +69,7 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 
 # Credits
 ## This projects takes data from multiple sources
-**| URL                                                      | Use                         |
+| URL                                                      | Use                         |
 |----------------------------------------------------------|-----------------------------|
 | https://wiki.anidb.net/API#Anime_Titles                  | Anime title list            |
 | https://github.com/manami-project/anime-offline-database | AniDB IDs to MAL/Kitsu IDs  |
@@ -77,7 +77,7 @@ The "database" right now is just a plain json file. Each key is the AniDB ID for
 | https://twist.moe                                        | Anime episodes              |
 | https://github.com/worldveil/dejavu                      | Acoustic fingerprinting     |
 | https://www.anime-skip.com                               | Other timestamp DB          |
-| https://tuckerchap.in/BetterVRV                          | Other timestamp DB          |**
+| https://tuckerchap.in/BetterVRV                          | Other timestamp DB          |
 
 # TODO
 - [ ] Logging
