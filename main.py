@@ -128,6 +128,11 @@ def main():
 		mal_id = anime_offline_database.convert_anime_id(anidb_id, "anidb", "myanimelist")
 		kitsu_id = anime_offline_database.convert_anime_id(anidb_id, "anidb", "kitsu")
 
+		if not kitsu_id:
+			if args.parsed_args.verbose:
+				print(f"[main.py] [WARNING] {anidb_id} AniDB ID has no Kitsu ID! Skipping")
+			continue
+
 		kitsu_details = kitsu.details(kitsu_id)
 		themes = themesmoe.download_themes(mal_id)
 
@@ -135,7 +140,6 @@ def main():
 			if args.parsed_args.verbose:
 				title = kitsu_details["data"]["attributes"]["canonicalTitle"]
 				print(f"[main.py] [WARNING] {title} has no themes! Skipping")
-			
 			continue
 		
 		for theme_path in themes:
