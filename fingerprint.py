@@ -43,7 +43,7 @@ def fingerprint_episodes(anidb_id, episodes):
 	# Clear the ending/opening folders after done
 	if args.parsed_args.verbose:
 		print("[fingerprint.py] [INFO] Clearing openings folder")
-	for f in glob.glob("./opening/*"):
+	for f in glob.glob("./openings/*"):
 		os.remove(f)
 
 	if args.parsed_args.verbose:
